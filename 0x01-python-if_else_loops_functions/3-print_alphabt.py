@@ -6,4 +6,4 @@ for i in list(
                  ) + list(
                          range(ord('r'), ord('z') + 1)
                          ):
-     print('{:c}'.format(i), end="")
+    print('{:c}'.format(i), end="")
