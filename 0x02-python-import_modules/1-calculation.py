@@ -4,15 +4,13 @@ from sys import argv
 
 
 if __name__ == "__main__":
+    """Print the sum, difference, multiple and quotient of 10 and 5."""
+    from calculator_1 import add, sub, mul, div
 
-    nargs = len(argv) - 1
+    a = 10
+    b = 5
 
-    if nargs == 0:
-        print("0 arguments.")
-    elif nargs == 1:
-        print("1 argument:")
-    else:
-        print("{} arguments:".format(nargs))
-
-        for i, v in enumerate(argv[1:]):
-            print("{}: {}".format(i + 1, v))
+    print("{} + {} = {}".format(a, b, add(a, b)))
+    print("{} - {} = {}".format(a, b, sub(a, b)))
+    print("{} * {} = {}".format(a, b, mul(a, b)))
+    print("{} / {} = {}".format(a, b, div(a, b)))
