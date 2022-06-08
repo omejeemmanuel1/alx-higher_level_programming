@@ -1,9 +1,11 @@
 #!/usr/bin/python3
 
 
-def multiply_by_2(a_dictionary):
-    """ Create a new dictionary with all values doubled
+def best_score(a_dictionary):
+    """ Retrieve the key of the largest integer value
     """
     if a_dictionary is not None:
-        return {key: 2 * val for key, val in a_dictionary.items()}
+        return max(
+                a_dictionary.items(), key=lambda item: item[1], default=[None]
+            )[0]
     return None
