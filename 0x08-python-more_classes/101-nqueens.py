@@ -18,6 +18,7 @@ queen must be placed on the chessboard.
 """
 import sys
 
+
 def init_board(n):
     """Initialize an `n`x`n` sized chessboard with 0's."""
     board = []
@@ -25,11 +26,13 @@ def init_board(n):
     [row.append(' ') for i in range(n) for row in board]
     return (board)
 
+
 def board_deepcopy(board):
     """Return a deepcopy of a chessboard."""
     if isinstance(board, list):
         return list(map(board_deepcopy, board))
     return (board)
+
 
 def get_solution(board):
     """Return the list of lists representation of a solved chessboard."""
@@ -40,6 +43,7 @@ def get_solution(board):
                 solution.append([r, c])
                 break
     return (solution)
+
 
 def xout(board, row, col):
     # X out all forward spots
@@ -72,10 +76,10 @@ def xout(board, row, col):
     c = col + 1
     for r in range(row - 1, -1, -1):
         if c >= len(board):
-             break
-         board[r][c] = "x"
-         c += 1
-    # X out all spots diagonally down to the left
+            break
+        board[r][c] = "x"
+        c += 1
+    #  X out all spots diagonally down to the left
     c = col - 1
     for r in range(row + 1, len(board)):
         if c < 0:
